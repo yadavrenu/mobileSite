@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { Cartitems } from './cartitems';
+import { DataService } from './data.service';
 
 const routes:Routes=[
   {
@@ -28,7 +29,7 @@ const routes:Routes=[
     RouterModule.forRoot(routes)
     // BrowserAnimationsModule
   ],
-  providers: [Cartitems],
+  providers: [Cartitems, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

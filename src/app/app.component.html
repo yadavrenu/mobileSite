@@ -1,8 +1,8 @@
 <html>
   <head>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>MagCart</title>
   </head>
   <body>
@@ -12,6 +12,7 @@
     
 
     <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
         <h3>Categories</h3>
         <ul *ngFor="let item of cartItems.categories">
          <a click=display(item)> {{item}}</a>
@@ -19,14 +20,14 @@
     </div>
     </div>
       <div id="main">
-        <div id="right"></div>
-      <!-- <router-outlet>
+        <!-- <div id="right"></div> -->
+      <router-outlet>
 
-      </router-outlet> -->
-
+      </router-outlet>
+<!-- 
     <div id="footer">
 
-      </div>
+      </div> -->
     </div>
   </div>
   <!-- <script>

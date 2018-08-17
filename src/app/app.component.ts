@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 // import { element } from '@angular/core/src/render3/instructions';
 import { ViewEncapsulation } from '@angular/core';
 import { Cartitems } from './cartitems';
+import { DataService } from './data.service'
 
 
 @Component({
@@ -13,38 +14,48 @@ import { Cartitems } from './cartitems';
 export class AppComponent {
   title = 'msite';
 
-  constructor(private cartItems:Cartitems){
+  constructor(private cartItems:Cartitems, 
+              private data: DataService){
 
   }
-display:Array<any>=[];
 
 displayAll(){
-
-var text="<table><tr><th>Name of Item &emsp;&emsp;</th><th>Price&emsp;&emsp;</th><th>Category&emsp;</th><th></th></tr>";
-this.cartItems.all.forEach(element1 => {
- console.log(element1);
- element1.forEach(item=>{
-   this.display.push(item);
-   text+="<tr><td>"+item.name+"</td><td>"+item.price+"</td><td>"+item.clas+"<td><input type='button' value='Add to Cart' class='button' id="+item.name+"></td></tr>";
- })
-});
-text+="</table>";
-document.getElementById("right").innerHTML=text;
+  this.data.callComponentMethod();
 }
+// displayAll(){
+
+// var text="<table  align='center'><tr><th>&emsp;&emsp;Name &emsp;&emsp;</th><th>&emsp;&emsp;Price&emsp;&emsp;</th><<th></th></tr>";
+// this.cartItems.all.forEach(element1 => {
+//  console.log(element1);
+//  element1.forEach(item=>{
+//    this.display.push(item);
+//    text+="<tr><td>"+item.name+"</td><td>₹"+item.price+"</td><td><button class='.btn .btn-xs button' (click)='addToCart("+item.name+")' id="+item.name+">Add</button></td></tr>";
+//  })
+// });
+// text+="</table>";
+// document.getElementById("right").innerHTML=text;
+// }
 
 openNav(){
-  document.getElementById("mySidenav").style.width = "20%";
-  document.getElementById("main").style.marginLeft = "20%";
+  document.getElementById("mySidenav").style.width = "40%";
+  document.getElementById("main").style.marginLeft = "40%";
   // document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 closeNav(){
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
-  // document.body.style.backgroundColor = "white";
 
 }
+// $(document).click((e)=>{
+//   if(e.target.id == "test"){
+//     e.preventDefault();      
+//     e.stopPropagation();   
+//   }
+//   else{
+//      //your function call that you want to invoke on clicking anywhere outside of div _test_
+//   } 
+// });
 ngOnInit(){
-
-  this.displayAll();
+// this.displayAll();
 }
 }

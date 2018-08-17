@@ -1,0 +1,12 @@
+#right{
+    /* background-color: rgba(240, 231, 231, 0.726); */
+    margin-top: 10%;
+    /* width: 60%; */
+    /* height: 200px; */
+    height: 100%;
+    /* text-align: center; */
+    /* line-height: 50px;
+    padding: 50px 100px; */
+    /* float: right; */
+    overflow-y: scroll;
+    }
